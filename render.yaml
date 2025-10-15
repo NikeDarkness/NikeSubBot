@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: telegram-bot
+    env: python
+    region: frankfurt   # можно поменять на "oregon" или "singapore", если нужно
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    plan: free
+    envVars:
+      - key: API_TOKEN
+        sync: false
